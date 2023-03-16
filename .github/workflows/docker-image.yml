@@ -16,6 +16,6 @@ jobs:
     - name: Build the Docker image
       run: |
        docker build . --file Dockerfile --tag tonyzzp/go_httpserver_hello
-       docker login -u tonyzzp -p dckr_pat_QJAs0r5paLDrDXNDFx5E-6sa40c
+       docker login -u tonyzzp -p ${{secrets.DOCKER_USER_PASSWORD}}
        docker push tonyzzp/go_httpserver_hello
        
