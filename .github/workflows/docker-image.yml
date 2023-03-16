@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+       docker build . --file Dockerfile --tag tonyzzp/go_httpserver_hello
+       docker login -u tonyzzp -p dckr_pat_QJAs0r5paLDrDXNDFx5E-6sa40c
+       docker push tonyzzp/go_httpserver_hello
+       
