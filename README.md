@@ -14,7 +14,7 @@ docker run -itd -p 80:80 tonyzzp/go_httpserver_hello
 运行时增加环境变量
 
 - HTTP_SSL=true
-- HTTP_HOST=myhost.com
+- HTTP_HOST=myhost.com,www.myhost.com
 - HTTP_EMAIL=mymail@mail.com
 
 如:
@@ -22,7 +22,7 @@ docker run -itd -p 80:80 tonyzzp/go_httpserver_hello
 docker run -itd \
     -p 443:443 \
     -e HTTP_SSL=true \
-    -e HTTP_HOST=myhost.com \
+    -e HTTP_HOST=myhost.com,www.myhost.com \
     -e HTTP_EMAIL=mymail@mail.com \
     tonyzzp/go_httpserver_hello
 ```
