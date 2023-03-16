@@ -1,9 +1,7 @@
-name: Docker Image CI
+name: build ocker image
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -13,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: checkut
+      uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
        docker build . --file Dockerfile --tag tonyzzp/go_httpserver_hello
