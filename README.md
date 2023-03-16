@@ -21,6 +21,7 @@ docker run -itd -p 80:80 tonyzzp/go_httpserver_hello
 ```
 docker run -itd \
     -p 443:443 \
+    -p 80:80 \
     -e HTTP_SSL=true \
     -e HTTP_HOST=myhost.com,www.myhost.com \
     -e HTTP_EMAIL=mymail@mail.com \
