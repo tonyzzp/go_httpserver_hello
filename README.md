@@ -5,7 +5,10 @@
 https://hub.docker.com/r/tonyzzp/go_httpserver_hello
 
 
-## 使用
+# 使用
+
+## 直接使用命令
+
 ```bash
 docker run -itd \
   -p 80:80 \
@@ -28,5 +31,10 @@ docker run -itd \
     -e HTTP_HOST=myhost.com,www.myhost.com \
     -e HTTP_EMAIL=mymail@mail.com \
     tonyzzp/go_httpserver_hello
+```
+
+## 使用docker-compose
+```
+docker-compose -f docker-compose-sample.yml up -d
 ```
 
