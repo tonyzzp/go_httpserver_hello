@@ -1,0 +1,17 @@
+version: '3'
+services:
+  go_httpserver_hello:
+    container_name: go_httpserver_hello
+    image: tonyzzp/go_httpserver_hello:latest
+    volumes:
+      - go_httpserver_hello:/cert-cache
+    ports:
+      - "443:443"
+      - "80:80"
+    environment:
+      - HTTP_SSL=true
+      - HTTP_HOST=myhost.com,www.myhost.com
+      - HTTP_EMAIL=myname@mail.com
+
+volumes:
+  go_httpserver_hello:
